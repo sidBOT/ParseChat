@@ -6,30 +6,30 @@ provides-nominal:
 provides-member:
 - ["C9ParseChat14ViewController", ""]
 provides-dynamic-lookup:
-- "viewDidLoad"
-- "passField"
-- "errorAlertView"
-- "registerAction"
+- "didReceiveMemoryWarning"
 - "loginAction"
 - "emailField"
+- "registerAction"
+- "errorAlertView"
+- "passField"
 - "is_alertViewMessage"
-- "didReceiveMemoryWarning"
+- "viewDidLoad"
 depends-top-level:
-- "AssignmentPrecedence"
 - "ViewController"
-- "UIViewController"
-- !private "&&"
-- !private "??"
-- "UITextField"
-- "Error"
-- !private "UIAlertAction"
-- !private "PFUser"
-- !private "print"
-- !private "BooleanLiteralType"
 - !private "!"
 - !private "StringLiteralType"
+- !private "UIAlertAction"
+- !private "PFUser"
+- !private "BooleanLiteralType"
+- "Error"
 - !private "UIAlertController"
 - !private "Bool"
+- "UITextField"
+- !private "&&"
+- !private "print"
+- !private "??"
+- "UIViewController"
+- "AssignmentPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "PFUser"]
 - !private ["Ps9AnyObject", "UIAlertAction"]
@@ -45,6 +45,7 @@ depends-member:
 - ["Ps9AnyObject", "loginAction"]
 - ["Ps9AnyObject", "passField"]
 - !private ["Ps9AnyObject", "password"]
+- !private ["Ps9AnyObject", "performSegue"]
 - !private ["Ps9AnyObject", "present"]
 - !private ["Ps9AnyObject", "print"]
 - ["Ps9AnyObject", "registerAction"]
@@ -70,6 +71,7 @@ depends-member:
 - ["Ps7CVarArg", "loginAction"]
 - ["Ps7CVarArg", "passField"]
 - !private ["Ps7CVarArg", "password"]
+- !private ["Ps7CVarArg", "performSegue"]
 - !private ["Ps7CVarArg", "present"]
 - !private ["Ps7CVarArg", "print"]
 - ["Ps7CVarArg", "registerAction"]
@@ -95,6 +97,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "loginAction"]
 - ["Ps28CustomDebugStringConvertible", "passField"]
 - !private ["Ps28CustomDebugStringConvertible", "password"]
+- !private ["Ps28CustomDebugStringConvertible", "performSegue"]
 - !private ["Ps28CustomDebugStringConvertible", "present"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - ["Ps28CustomDebugStringConvertible", "registerAction"]
@@ -124,6 +127,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "loginAction"]
 - ["Ps23CustomStringConvertible", "passField"]
 - !private ["Ps23CustomStringConvertible", "password"]
+- !private ["Ps23CustomStringConvertible", "performSegue"]
 - !private ["Ps23CustomStringConvertible", "present"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - ["Ps23CustomStringConvertible", "registerAction"]
@@ -151,6 +155,7 @@ depends-member:
 - ["Ps9Equatable", "loginAction"]
 - ["Ps9Equatable", "passField"]
 - !private ["Ps9Equatable", "password"]
+- !private ["Ps9Equatable", "performSegue"]
 - !private ["Ps9Equatable", "present"]
 - !private ["Ps9Equatable", "print"]
 - ["Ps9Equatable", "registerAction"]
@@ -189,6 +194,7 @@ depends-member:
 - ["Ps8Hashable", "loginAction"]
 - ["Ps8Hashable", "passField"]
 - !private ["Ps8Hashable", "password"]
+- !private ["Ps8Hashable", "performSegue"]
 - !private ["Ps8Hashable", "present"]
 - !private ["Ps8Hashable", "print"]
 - ["Ps8Hashable", "registerAction"]
@@ -221,6 +227,7 @@ depends-member:
 - ["PSo8NSCoding", "is_alertViewMessage"]
 - ["PSo8NSCoding", "loginAction"]
 - ["PSo8NSCoding", "passField"]
+- !private ["PSo8NSCoding", "performSegue"]
 - !private ["PSo8NSCoding", "present"]
 - !private ["PSo8NSCoding", "print"]
 - ["PSo8NSCoding", "registerAction"]
@@ -240,6 +247,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "is_alertViewMessage"]
 - ["PSo26NSExtensionRequestHandling", "loginAction"]
 - ["PSo26NSExtensionRequestHandling", "passField"]
+- !private ["PSo26NSExtensionRequestHandling", "performSegue"]
 - !private ["PSo26NSExtensionRequestHandling", "present"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "registerAction"]
@@ -264,6 +272,7 @@ depends-member:
 - ["CSo8NSObject", "loginAction"]
 - ["CSo8NSObject", "passField"]
 - !private ["CSo8NSObject", "password"]
+- !private ["CSo8NSObject", "performSegue"]
 - !private ["CSo8NSObject", "present"]
 - !private ["CSo8NSObject", "print"]
 - ["CSo8NSObject", "registerAction"]
@@ -285,6 +294,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "loginAction"]
 - ["PSo16NSObjectProtocol", "passField"]
 - !private ["PSo16NSObjectProtocol", "password"]
+- !private ["PSo16NSObjectProtocol", "performSegue"]
 - !private ["PSo16NSObjectProtocol", "present"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - ["PSo16NSObjectProtocol", "registerAction"]
@@ -347,6 +357,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "is_alertViewMessage"]
 - ["PSo21UIAppearanceContainer", "loginAction"]
 - ["PSo21UIAppearanceContainer", "passField"]
+- !private ["PSo21UIAppearanceContainer", "performSegue"]
 - !private ["PSo21UIAppearanceContainer", "present"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - ["PSo21UIAppearanceContainer", "registerAction"]
@@ -364,6 +375,7 @@ depends-member:
 - ["PSo18UIContentContainer", "is_alertViewMessage"]
 - ["PSo18UIContentContainer", "loginAction"]
 - ["PSo18UIContentContainer", "passField"]
+- !private ["PSo18UIContentContainer", "performSegue"]
 - !private ["PSo18UIContentContainer", "present"]
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "registerAction"]
@@ -384,6 +396,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "is_alertViewMessage"]
 - ["PSo18UIFocusEnvironment", "loginAction"]
 - ["PSo18UIFocusEnvironment", "passField"]
+- !private ["PSo18UIFocusEnvironment", "performSegue"]
 - !private ["PSo18UIFocusEnvironment", "present"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - ["PSo18UIFocusEnvironment", "registerAction"]
@@ -406,6 +419,7 @@ depends-member:
 - ["CSo11UIResponder", "is_alertViewMessage"]
 - ["CSo11UIResponder", "loginAction"]
 - ["CSo11UIResponder", "passField"]
+- !private ["CSo11UIResponder", "performSegue"]
 - !private ["CSo11UIResponder", "present"]
 - !private ["CSo11UIResponder", "print"]
 - ["CSo11UIResponder", "registerAction"]
@@ -422,6 +436,7 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "is_alertViewMessage"]
 - ["PSo30UIResponderStandardEditActions", "loginAction"]
 - ["PSo30UIResponderStandardEditActions", "passField"]
+- !private ["PSo30UIResponderStandardEditActions", "performSegue"]
 - !private ["PSo30UIResponderStandardEditActions", "present"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
 - ["PSo30UIResponderStandardEditActions", "registerAction"]
@@ -439,6 +454,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "is_alertViewMessage"]
 - ["PSo16UIStateRestoring", "loginAction"]
 - ["PSo16UIStateRestoring", "passField"]
+- !private ["PSo16UIStateRestoring", "performSegue"]
 - !private ["PSo16UIStateRestoring", "present"]
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "registerAction"]
@@ -458,6 +474,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "is_alertViewMessage"]
 - ["PSo18UITraitEnvironment", "loginAction"]
 - ["PSo18UITraitEnvironment", "passField"]
+- !private ["PSo18UITraitEnvironment", "performSegue"]
 - !private ["PSo18UITraitEnvironment", "present"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - ["PSo18UITraitEnvironment", "registerAction"]
@@ -480,6 +497,7 @@ depends-member:
 - ["CSo16UIViewController", "is_alertViewMessage"]
 - ["CSo16UIViewController", "loginAction"]
 - ["CSo16UIViewController", "passField"]
+- !private ["CSo16UIViewController", "performSegue"]
 - !private ["CSo16UIViewController", "present"]
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "registerAction"]
@@ -505,6 +523,7 @@ depends-member:
 - ["C9ParseChat14ViewController", "is_alertViewMessage"]
 - ["C9ParseChat14ViewController", "loginAction"]
 - ["C9ParseChat14ViewController", "passField"]
+- !private ["C9ParseChat14ViewController", "performSegue"]
 - !private ["C9ParseChat14ViewController", "present"]
 - !private ["C9ParseChat14ViewController", "print"]
 - ["C9ParseChat14ViewController", "registerAction"]
@@ -539,6 +558,7 @@ depends-member:
 - ["Ps9_Hashable", "loginAction"]
 - ["Ps9_Hashable", "passField"]
 - !private ["Ps9_Hashable", "password"]
+- !private ["Ps9_Hashable", "performSegue"]
 - !private ["Ps9_Hashable", "present"]
 - !private ["Ps9_Hashable", "print"]
 - ["Ps9_Hashable", "registerAction"]

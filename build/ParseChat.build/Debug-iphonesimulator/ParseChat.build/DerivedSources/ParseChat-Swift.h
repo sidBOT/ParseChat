@@ -116,6 +116,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -138,18 +139,42 @@ SWIFT_CLASS("_TtC9ParseChat11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
+@class UILabel;
 @class NSCoder;
 
+SWIFT_CLASS("_TtC9ParseChat8ChatCell")
+@interface ChatCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified messageLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userLabel;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIRefreshControl;
+@class PFObject;
+@class UITableView;
+@class UITextField;
+@class NSBundle;
+
 SWIFT_CLASS("_TtC9ParseChat18ChatViewController")
-@interface ChatViewController : UIViewController
+@interface ChatViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified messageField;
+@property (nonatomic, strong) UIRefreshControl * _Null_unspecified refreshControl;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, copy) NSArray<PFObject *> * _Nonnull myMessages;
+@property (nonatomic, readonly, strong) PFObject * _Nonnull chatMessage;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
+- (void)onTimer;
+- (void)didPullToRefresh:(UIRefreshControl * _Nonnull)refreshControl;
+- (IBAction)sendAction:(id _Nonnull)sender;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 
 SWIFT_CLASS("_TtC9ParseChat14ViewController")
 @interface ViewController : UIViewController

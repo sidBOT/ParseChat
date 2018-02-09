@@ -62,6 +62,7 @@ class ViewController: UIViewController {
                     self.errorAlertView(error: error)
                 } else {
                     print("User logged in successfully")
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     // display view controller that needs to shown after successful login
                 }
             }
@@ -85,6 +86,7 @@ class ViewController: UIViewController {
                     self.errorAlertView(error: error)
                 } else {
                     print("User Registered successfully")
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     // manually segue to logged in view
                 }
             }
