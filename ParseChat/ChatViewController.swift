@@ -16,7 +16,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var tableView: UITableView!
     var myMessages: [PFObject] = []
-    let chatMessage = PFObject(className: "Message")
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -27,7 +26,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector(ChatViewController.didPullToRefresh(_:)), for: .valueChanged)
         
         tableView.insertSubview(refreshControl, at: 0)
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+    }
+    @IBAction func logoutAction(_ sender: Any) {
+        PFUser.logOut()
+        self.dismiss(animated: true, completion: nil)
     }
 
     func onTimer() {

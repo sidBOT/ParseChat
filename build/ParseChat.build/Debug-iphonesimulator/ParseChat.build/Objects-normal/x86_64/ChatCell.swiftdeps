@@ -6,15 +6,15 @@ provides-nominal:
 provides-member:
 - ["C9ParseChat8ChatCell", ""]
 provides-dynamic-lookup:
-- "userLabel"
 - "awakeFromNib"
-- "setSelected"
+- "userLabel"
 - "messageLabel"
+- "setSelected"
 depends-top-level:
 - "Bool"
-- "UILabel"
-- "UITableViewCell"
 - "ChatCell"
+- "UITableViewCell"
+- "UILabel"
 depends-member:
 - ["Ps9AnyObject", "awakeFromNib"]
 - !private ["Ps9AnyObject", "init"]

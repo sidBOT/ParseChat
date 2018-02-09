@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuI-9l-bFp">
                                 <rect key="frame" x="119" y="287" width="138" height="30"/>
@@ -51,6 +51,10 @@
                                     <action selector="registerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fML-XW-whE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chat-bubble-logo-icon-74378" translatesAutoresizingMaskIntoConstraints="NO" id="Qk3-vI-cfb">
+                                <rect key="frame" x="0.0" y="20" width="96" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.63959232664192311" green="0.87133169412030465" blue="0.77484312899267049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -104,7 +108,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" asdsadasdasdasd asdasdasdas  asdas das d" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGK-ik-UAN">
-                                                    <rect key="frame" x="8" y="21" width="359" height="81"/>
+                                                    <rect key="frame" x="8" y="45" width="359" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -114,14 +118,15 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" red="0.92274868488311768" green="0.39016368985176086" blue="0.22567415237426758" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="shadowColor" red="0.92274868488311768" green="0.39016368985176086" blue="0.22567415237426758" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="IGK-ik-UAN" secondAttribute="trailing" constant="8" id="GZh-tV-ZmH"/>
                                                 <constraint firstItem="IGK-ik-UAN" firstAttribute="leading" secondItem="A6j-IK-2D7" secondAttribute="leading" constant="8" id="Ocw-zG-eId"/>
                                                 <constraint firstAttribute="bottom" secondItem="IGK-ik-UAN" secondAttribute="bottom" constant="8" id="gz7-ss-3rL"/>
-                                                <constraint firstItem="IGK-ik-UAN" firstAttribute="top" secondItem="A6j-IK-2D7" secondAttribute="top" constant="21" id="sXg-JQ-sJi"/>
+                                                <constraint firstItem="IGK-ik-UAN" firstAttribute="top" secondItem="A6j-IK-2D7" secondAttribute="top" constant="45" id="sXg-JQ-sJi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -134,7 +139,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="2dk-f9-3HL"/>
+                    <navigationItem key="navigationItem" title="Chat" id="2dk-f9-3HL">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tCt-z7-Zxm">
+                            <connections>
+                                <action selector="logoutAction:" destination="K19-o9-H0p" id="6Xo-4S-XbJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageField" destination="mrq-US-fia" id="Fjo-CQ-HQ7"/>
                         <outlet property="tableView" destination="EOJ-L0-otI" id="635-sA-MC9"/>
@@ -163,4 +174,7 @@
             <point key="canvasLocation" x="1023.2" y="140.77961019490255"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat-bubble-logo-icon-74378" width="512" height="512"/>
+    </resources>
 </document>

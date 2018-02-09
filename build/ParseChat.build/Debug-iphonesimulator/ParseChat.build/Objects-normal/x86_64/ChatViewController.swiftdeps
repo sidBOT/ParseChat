@@ -6,66 +6,68 @@ provides-nominal:
 provides-member:
 - ["C9ParseChat18ChatViewController", ""]
 provides-dynamic-lookup:
-- "viewDidLoad"
-- "refreshControl"
-- "myMessages"
+- "logoutAction"
 - "tableView"
 - "tableView"
 - "tableView"
-- "chatMessage"
+- "messageField"
 - "sendAction"
 - "didPullToRefresh"
+- "myMessages"
 - "onTimer"
-- "messageField"
+- "viewDidLoad"
+- "refreshControl"
 depends-top-level:
-- "UIViewController"
-- "ChatViewController"
-- "StringLiteralType"
-- "PFObject"
 - "IndexPath"
-- "UITableViewCell"
-- !private "BooleanLiteralType"
-- !private "PFUser"
 - !private "ChatCell"
-- "UITextField"
-- !private "UITableViewAutomaticDimension"
-- !private "Void"
 - "Int"
-- !private "String"
+- !private "StringLiteralType"
+- !private "BooleanLiteralType"
 - !private "print"
-- !private "Error"
+- "UITableViewCell"
 - !private "??"
+- !private "PFQuery"
 - "UITableViewDelegate"
 - "UITableViewDataSource"
 - !private "Timer"
+- "UIViewController"
+- !private "Error"
 - "UIRefreshControl"
-- "UITableView"
+- !private "String"
+- !private "PFUser"
+- "PFObject"
+- "UITextField"
+- "ChatViewController"
 - "AssignmentPrecedence"
-- !private "PFQuery"
+- !private "UITableViewAutomaticDimension"
 - !private "=="
+- !private "Void"
 - "CastingPrecedence"
+- "UITableView"
 depends-member:
 - !private ["Ps9AnyObject", "ChatViewController"]
-- ["Ps9AnyObject", "PFObject"]
+- !private ["Ps9AnyObject", "PFObject"]
 - !private ["Ps9AnyObject", "PFQuery"]
 - !private ["Ps9AnyObject", "PFUser"]
 - !private ["Ps9AnyObject", "Timer"]
 - !private ["Ps9AnyObject", "UIRefreshControl"]
 - !private ["Ps9AnyObject", "UITableViewAutomaticDimension"]
 - !private ["Ps9AnyObject", "addTarget"]
-- ["Ps9AnyObject", "chatMessage"]
 - !private ["Ps9AnyObject", "current"]
 - !private ["Ps9AnyObject", "dataSource"]
 - !private ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
 - ["Ps9AnyObject", "didPullToRefresh"]
+- !private ["Ps9AnyObject", "dismiss"]
 - !private ["Ps9AnyObject", "endRefreshing"]
 - !private ["Ps9AnyObject", "estimatedRowHeight"]
 - !private ["Ps9AnyObject", "findObjectsInBackground"]
 - ["Ps9AnyObject", "indexPathForPreferredFocusedView"]
 - ["Ps9AnyObject", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "insertSubview"]
+- !private ["Ps9AnyObject", "logOut"]
+- ["Ps9AnyObject", "logoutAction"]
 - ["Ps9AnyObject", "messageField"]
 - !private ["Ps9AnyObject", "messageLabel"]
 - ["Ps9AnyObject", "myMessages"]
@@ -157,7 +159,7 @@ depends-member:
 - !private ["Ps7CVarArg", "Index"]
 - !private ["Ps7CVarArg", "IndexDistance"]
 - !private ["Ps7CVarArg", "IntegerLiteralType"]
-- ["Ps7CVarArg", "PFObject"]
+- !private ["Ps7CVarArg", "PFObject"]
 - !private ["Ps7CVarArg", "PFQuery"]
 - !private ["Ps7CVarArg", "PFUser"]
 - !private ["Ps7CVarArg", "Stride"]
@@ -168,20 +170,22 @@ depends-member:
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "addTarget"]
-- ["Ps7CVarArg", "chatMessage"]
 - !private ["Ps7CVarArg", "count"]
 - !private ["Ps7CVarArg", "current"]
 - !private ["Ps7CVarArg", "dataSource"]
 - !private ["Ps7CVarArg", "delegate"]
 - !private ["Ps7CVarArg", "dequeueReusableCell"]
 - ["Ps7CVarArg", "didPullToRefresh"]
+- !private ["Ps7CVarArg", "dismiss"]
 - !private ["Ps7CVarArg", "endRefreshing"]
 - !private ["Ps7CVarArg", "estimatedRowHeight"]
 - !private ["Ps7CVarArg", "findObjectsInBackground"]
 - ["Ps7CVarArg", "indexPathForPreferredFocusedView"]
 - ["Ps7CVarArg", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "insertSubview"]
+- !private ["Ps7CVarArg", "logOut"]
+- ["Ps7CVarArg", "logoutAction"]
 - ["Ps7CVarArg", "messageField"]
 - !private ["Ps7CVarArg", "messageLabel"]
 - ["Ps7CVarArg", "myMessages"]
@@ -239,12 +243,13 @@ depends-member:
 - ["C9ParseChat18ChatViewController", "UITableViewCell"]
 - ["C9ParseChat18ChatViewController", "UITextField"]
 - !private ["C9ParseChat18ChatViewController", "Void"]
-- ["C9ParseChat18ChatViewController", "chatMessage"]
 - ["C9ParseChat18ChatViewController", "deinit"]
 - ["C9ParseChat18ChatViewController", "didPullToRefresh"]
+- !private ["C9ParseChat18ChatViewController", "dismiss"]
 - ["C9ParseChat18ChatViewController", "indexPathForPreferredFocusedView"]
 - ["C9ParseChat18ChatViewController", "indexPathForPreferredFocusedViewInTableView"]
 - ["C9ParseChat18ChatViewController", "init"]
+- ["C9ParseChat18ChatViewController", "logoutAction"]
 - ["C9ParseChat18ChatViewController", "messageField"]
 - ["C9ParseChat18ChatViewController", "myMessages"]
 - ["C9ParseChat18ChatViewController", "numberOfSections"]
@@ -283,12 +288,12 @@ depends-member:
 - !private ["Ps10Comparable", "IntegerLiteralType"]
 - !private ["Ps10Comparable", "Stride"]
 - !private ["Ps10Comparable", "_DisabledRangeIndex"]
-- ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "row"]
 - !private ["Ps28CustomDebugStringConvertible", "ChatViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
-- ["Ps28CustomDebugStringConvertible", "PFObject"]
+- !private ["Ps28CustomDebugStringConvertible", "PFObject"]
 - !private ["Ps28CustomDebugStringConvertible", "PFQuery"]
 - !private ["Ps28CustomDebugStringConvertible", "PFUser"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
@@ -297,20 +302,22 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewAutomaticDimension"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "addTarget"]
-- ["Ps28CustomDebugStringConvertible", "chatMessage"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - !private ["Ps28CustomDebugStringConvertible", "current"]
 - !private ["Ps28CustomDebugStringConvertible", "dataSource"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCell"]
 - ["Ps28CustomDebugStringConvertible", "didPullToRefresh"]
+- !private ["Ps28CustomDebugStringConvertible", "dismiss"]
 - !private ["Ps28CustomDebugStringConvertible", "endRefreshing"]
 - !private ["Ps28CustomDebugStringConvertible", "estimatedRowHeight"]
 - !private ["Ps28CustomDebugStringConvertible", "findObjectsInBackground"]
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insertSubview"]
+- !private ["Ps28CustomDebugStringConvertible", "logOut"]
+- ["Ps28CustomDebugStringConvertible", "logoutAction"]
 - ["Ps28CustomDebugStringConvertible", "messageField"]
 - !private ["Ps28CustomDebugStringConvertible", "messageLabel"]
 - ["Ps28CustomDebugStringConvertible", "myMessages"]
@@ -353,7 +360,7 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_DisabledRangeIndex"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
-- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps17CustomReflectable", "Index"]
 - !private ["Ps17CustomReflectable", "IndexDistance"]
 - !private ["Ps17CustomReflectable", "IntegerLiteralType"]
@@ -363,14 +370,14 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "count"]
-- ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "row"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "ChatViewController"]
 - !private ["Ps23CustomStringConvertible", "Index"]
 - !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
-- ["Ps23CustomStringConvertible", "PFObject"]
+- !private ["Ps23CustomStringConvertible", "PFObject"]
 - !private ["Ps23CustomStringConvertible", "PFQuery"]
 - !private ["Ps23CustomStringConvertible", "PFUser"]
 - !private ["Ps23CustomStringConvertible", "Stride"]
@@ -382,20 +389,22 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "addTarget"]
-- ["Ps23CustomStringConvertible", "chatMessage"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - !private ["Ps23CustomStringConvertible", "current"]
 - !private ["Ps23CustomStringConvertible", "dataSource"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCell"]
 - ["Ps23CustomStringConvertible", "didPullToRefresh"]
+- !private ["Ps23CustomStringConvertible", "dismiss"]
 - !private ["Ps23CustomStringConvertible", "endRefreshing"]
 - !private ["Ps23CustomStringConvertible", "estimatedRowHeight"]
 - !private ["Ps23CustomStringConvertible", "findObjectsInBackground"]
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insertSubview"]
+- !private ["Ps23CustomStringConvertible", "logOut"]
+- ["Ps23CustomStringConvertible", "logoutAction"]
 - ["Ps23CustomStringConvertible", "messageField"]
 - !private ["Ps23CustomStringConvertible", "messageLabel"]
 - ["Ps23CustomStringConvertible", "myMessages"]
@@ -447,7 +456,7 @@ depends-member:
 - ["Sd", "deinit"]
 - !private ["Ps9Equatable", "ChatViewController"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
-- ["Ps9Equatable", "PFObject"]
+- !private ["Ps9Equatable", "PFObject"]
 - !private ["Ps9Equatable", "PFQuery"]
 - !private ["Ps9Equatable", "PFUser"]
 - !private ["Ps9Equatable", "Stride"]
@@ -457,19 +466,21 @@ depends-member:
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "addTarget"]
-- ["Ps9Equatable", "chatMessage"]
 - !private ["Ps9Equatable", "current"]
 - !private ["Ps9Equatable", "dataSource"]
 - !private ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "dequeueReusableCell"]
 - ["Ps9Equatable", "didPullToRefresh"]
+- !private ["Ps9Equatable", "dismiss"]
 - !private ["Ps9Equatable", "endRefreshing"]
 - !private ["Ps9Equatable", "estimatedRowHeight"]
 - !private ["Ps9Equatable", "findObjectsInBackground"]
 - ["Ps9Equatable", "indexPathForPreferredFocusedView"]
 - ["Ps9Equatable", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "insertSubview"]
+- !private ["Ps9Equatable", "logOut"]
+- ["Ps9Equatable", "logoutAction"]
 - ["Ps9Equatable", "messageField"]
 - !private ["Ps9Equatable", "messageLabel"]
 - ["Ps9Equatable", "myMessages"]
@@ -520,17 +531,17 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
 - !private ["Ps25ExpressibleByArrayLiteral", "valueChanged"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
-- ["Ps32ExpressibleByStringInterpolation", "init"]
-- ["Ps26ExpressibleByStringLiteral", "init"]
-- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Sf", "deinit"]
 - !private ["Ps8Hashable", "ChatViewController"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
-- ["Ps8Hashable", "PFObject"]
+- !private ["Ps8Hashable", "PFObject"]
 - !private ["Ps8Hashable", "PFQuery"]
 - !private ["Ps8Hashable", "PFUser"]
 - !private ["Ps8Hashable", "Stride"]
@@ -540,19 +551,21 @@ depends-member:
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "addTarget"]
-- ["Ps8Hashable", "chatMessage"]
 - !private ["Ps8Hashable", "current"]
 - !private ["Ps8Hashable", "dataSource"]
 - !private ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "dequeueReusableCell"]
 - ["Ps8Hashable", "didPullToRefresh"]
+- !private ["Ps8Hashable", "dismiss"]
 - !private ["Ps8Hashable", "endRefreshing"]
 - !private ["Ps8Hashable", "estimatedRowHeight"]
 - !private ["Ps8Hashable", "findObjectsInBackground"]
 - ["Ps8Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps8Hashable", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "insertSubview"]
+- !private ["Ps8Hashable", "logOut"]
+- ["Ps8Hashable", "logoutAction"]
 - ["Ps8Hashable", "messageField"]
 - !private ["Ps8Hashable", "messageLabel"]
 - ["Ps8Hashable", "myMessages"]
@@ -629,11 +642,11 @@ depends-member:
 - !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
 - !private ["Ps16IteratorProtocol", "Element"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
-- ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "IntegerLiteralType"]
 - !private ["Ps10MirrorPath", "Stride"]
 - !private ["Ps10MirrorPath", "_DisabledRangeIndex"]
-- ["Ps10MirrorPath", "init"]
+- !private ["Ps10MirrorPath", "init"]
 - !private ["Ps17MutableCollection", "Index"]
 - !private ["Ps17MutableCollection", "IndexDistance"]
 - !private ["Ps17MutableCollection", "SubSequence"]
@@ -650,24 +663,25 @@ depends-member:
 - !private ["Ps16MutableIndexable", "subscript"]
 - ["CSo7NSCoder", "deinit"]
 - !private ["PSo8NSCoding", "ChatViewController"]
-- ["PSo8NSCoding", "PFObject"]
+- !private ["PSo8NSCoding", "PFObject"]
 - !private ["PSo8NSCoding", "PFQuery"]
 - !private ["PSo8NSCoding", "PFUser"]
 - !private ["PSo8NSCoding", "Timer"]
 - !private ["PSo8NSCoding", "UIRefreshControl"]
 - !private ["PSo8NSCoding", "UITableViewAutomaticDimension"]
 - !private ["PSo8NSCoding", "addTarget"]
-- ["PSo8NSCoding", "chatMessage"]
 - !private ["PSo8NSCoding", "dataSource"]
 - !private ["PSo8NSCoding", "delegate"]
 - !private ["PSo8NSCoding", "dequeueReusableCell"]
 - ["PSo8NSCoding", "didPullToRefresh"]
+- !private ["PSo8NSCoding", "dismiss"]
 - !private ["PSo8NSCoding", "endRefreshing"]
 - !private ["PSo8NSCoding", "estimatedRowHeight"]
 - ["PSo8NSCoding", "indexPathForPreferredFocusedView"]
 - ["PSo8NSCoding", "indexPathForPreferredFocusedViewInTableView"]
-- ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "insertSubview"]
+- ["PSo8NSCoding", "logoutAction"]
 - ["PSo8NSCoding", "messageField"]
 - !private ["PSo8NSCoding", "messageLabel"]
 - ["PSo8NSCoding", "myMessages"]
@@ -701,20 +715,21 @@ depends-member:
 - ["PSo8NSCoding", "viewForZoomingInScrollView"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "findObjectsInBackground"]
-- ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "order"]
 - !private ["PSo26NSExtensionRequestHandling", "ChatViewController"]
-- ["PSo26NSExtensionRequestHandling", "PFObject"]
+- !private ["PSo26NSExtensionRequestHandling", "PFObject"]
 - !private ["PSo26NSExtensionRequestHandling", "PFQuery"]
 - !private ["PSo26NSExtensionRequestHandling", "PFUser"]
 - !private ["PSo26NSExtensionRequestHandling", "Timer"]
 - !private ["PSo26NSExtensionRequestHandling", "UIRefreshControl"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewAutomaticDimension"]
-- ["PSo26NSExtensionRequestHandling", "chatMessage"]
 - ["PSo26NSExtensionRequestHandling", "didPullToRefresh"]
+- !private ["PSo26NSExtensionRequestHandling", "dismiss"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedView"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "logoutAction"]
 - ["PSo26NSExtensionRequestHandling", "messageField"]
 - ["PSo26NSExtensionRequestHandling", "myMessages"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSections"]
@@ -742,7 +757,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "viewForZooming"]
 - ["PSo26NSExtensionRequestHandling", "viewForZoomingInScrollView"]
 - ["PSo26NSExtensionRequestHandling", ""]
-- ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
 - !private ["CSo8NSObject", "ChatCell"]
 - !private ["CSo8NSObject", "ChatViewController"]
 - !private ["CSo8NSObject", "Error"]
@@ -760,12 +775,12 @@ depends-member:
 - ["CSo8NSObject", "UITextField"]
 - !private ["CSo8NSObject", "Void"]
 - !private ["CSo8NSObject", "addTarget"]
-- ["CSo8NSObject", "chatMessage"]
 - !private ["CSo8NSObject", "current"]
 - !private ["CSo8NSObject", "dataSource"]
 - !private ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "dequeueReusableCell"]
 - ["CSo8NSObject", "didPullToRefresh"]
+- !private ["CSo8NSObject", "dismiss"]
 - !private ["CSo8NSObject", "endRefreshing"]
 - !private ["CSo8NSObject", "estimatedRowHeight"]
 - !private ["CSo8NSObject", "findObjectsInBackground"]
@@ -773,6 +788,8 @@ depends-member:
 - ["CSo8NSObject", "indexPathForPreferredFocusedViewInTableView"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "insertSubview"]
+- !private ["CSo8NSObject", "logOut"]
+- ["CSo8NSObject", "logoutAction"]
 - ["CSo8NSObject", "messageField"]
 - !private ["CSo8NSObject", "messageLabel"]
 - ["CSo8NSObject", "myMessages"]
@@ -810,26 +827,28 @@ depends-member:
 - ["CSo8NSObject", "viewForZooming"]
 - ["CSo8NSObject", "viewForZoomingInScrollView"]
 - !private ["PSo16NSObjectProtocol", "ChatViewController"]
-- ["PSo16NSObjectProtocol", "PFObject"]
+- !private ["PSo16NSObjectProtocol", "PFObject"]
 - !private ["PSo16NSObjectProtocol", "PFQuery"]
 - !private ["PSo16NSObjectProtocol", "PFUser"]
 - !private ["PSo16NSObjectProtocol", "Timer"]
 - !private ["PSo16NSObjectProtocol", "UIRefreshControl"]
 - !private ["PSo16NSObjectProtocol", "UITableViewAutomaticDimension"]
 - !private ["PSo16NSObjectProtocol", "addTarget"]
-- ["PSo16NSObjectProtocol", "chatMessage"]
 - !private ["PSo16NSObjectProtocol", "current"]
 - !private ["PSo16NSObjectProtocol", "dataSource"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCell"]
 - ["PSo16NSObjectProtocol", "didPullToRefresh"]
+- !private ["PSo16NSObjectProtocol", "dismiss"]
 - !private ["PSo16NSObjectProtocol", "endRefreshing"]
 - !private ["PSo16NSObjectProtocol", "estimatedRowHeight"]
 - !private ["PSo16NSObjectProtocol", "findObjectsInBackground"]
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedView"]
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedViewInTableView"]
-- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "insertSubview"]
+- !private ["PSo16NSObjectProtocol", "logOut"]
+- ["PSo16NSObjectProtocol", "logoutAction"]
 - ["PSo16NSObjectProtocol", "messageField"]
 - !private ["PSo16NSObjectProtocol", "messageLabel"]
 - ["PSo16NSObjectProtocol", "myMessages"]
@@ -867,13 +886,14 @@ depends-member:
 - ["PSo16NSObjectProtocol", "viewForZooming"]
 - ["PSo16NSObjectProtocol", "viewForZoomingInScrollView"]
 - ["PSo16NSObjectProtocol", ""]
-- ["PSo14NSSecureCoding", "init"]
-- ["CSo8NSString", "init"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "init"]
 - !private ["Ps9OptionSet", "valueChanged"]
 - ["Sq", "deinit"]
 - !private ["CSo8PFObject", "current"]
 - ["CSo8PFObject", "deinit"]
-- ["CSo8PFObject", "init"]
+- !private ["CSo8PFObject", "init"]
+- !private ["CSo8PFObject", "logOut"]
 - !private ["CSo8PFObject", "saveInBackground"]
 - !private ["CSo8PFObject", "subscript"]
 - !private ["CSo8PFObject", "username"]
@@ -882,9 +902,11 @@ depends-member:
 - !private ["CSo7PFQuery", "init"]
 - !private ["CSo7PFQuery", "order"]
 - !private ["PSo13PFSubclassing", "current"]
+- !private ["PSo13PFSubclassing", "logOut"]
 - !private ["PSo13PFSubclassing", "username"]
 - !private ["CSo6PFUser", "current"]
 - ["CSo6PFUser", "deinit"]
+- !private ["CSo6PFUser", "logOut"]
 - !private ["CSo6PFUser", "username"]
 - !private ["Ps22RandomAccessCollection", "Index"]
 - !private ["Ps22RandomAccessCollection", "IndexDistance"]
@@ -950,9 +972,9 @@ depends-member:
 - !private ["Ps10Strideable", "Stride"]
 - !private ["Ps10Strideable", "_DisabledRangeIndex"]
 - ["SS", "deinit"]
-- ["SS", "init"]
-- ["Ps16TextOutputStream", "init"]
-- ["Ps20TextOutputStreamable", "init"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
 - ["CSo5Timer", "deinit"]
 - !private ["CSo5Timer", "scheduledTimer"]
 - !private ["PSo29UIAccessibilityIdentification", "addTarget"]
@@ -982,24 +1004,25 @@ depends-member:
 - !private ["PSo12UIAppearance", "text"]
 - !private ["PSo12UIAppearance", "userLabel"]
 - !private ["PSo21UIAppearanceContainer", "ChatViewController"]
-- ["PSo21UIAppearanceContainer", "PFObject"]
+- !private ["PSo21UIAppearanceContainer", "PFObject"]
 - !private ["PSo21UIAppearanceContainer", "PFQuery"]
 - !private ["PSo21UIAppearanceContainer", "PFUser"]
 - !private ["PSo21UIAppearanceContainer", "Timer"]
 - !private ["PSo21UIAppearanceContainer", "UIRefreshControl"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewAutomaticDimension"]
 - !private ["PSo21UIAppearanceContainer", "addTarget"]
-- ["PSo21UIAppearanceContainer", "chatMessage"]
 - !private ["PSo21UIAppearanceContainer", "dataSource"]
 - !private ["PSo21UIAppearanceContainer", "delegate"]
 - !private ["PSo21UIAppearanceContainer", "dequeueReusableCell"]
 - ["PSo21UIAppearanceContainer", "didPullToRefresh"]
+- !private ["PSo21UIAppearanceContainer", "dismiss"]
 - !private ["PSo21UIAppearanceContainer", "endRefreshing"]
 - !private ["PSo21UIAppearanceContainer", "estimatedRowHeight"]
 - ["PSo21UIAppearanceContainer", "indexPathForPreferredFocusedView"]
 - ["PSo21UIAppearanceContainer", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "insertSubview"]
+- ["PSo21UIAppearanceContainer", "logoutAction"]
 - ["PSo21UIAppearanceContainer", "messageField"]
 - !private ["PSo21UIAppearanceContainer", "messageLabel"]
 - ["PSo21UIAppearanceContainer", "myMessages"]
@@ -1033,17 +1056,18 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "viewForZoomingInScrollView"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["PSo18UIContentContainer", "ChatViewController"]
-- ["PSo18UIContentContainer", "PFObject"]
+- !private ["PSo18UIContentContainer", "PFObject"]
 - !private ["PSo18UIContentContainer", "PFQuery"]
 - !private ["PSo18UIContentContainer", "PFUser"]
 - !private ["PSo18UIContentContainer", "Timer"]
 - !private ["PSo18UIContentContainer", "UIRefreshControl"]
 - !private ["PSo18UIContentContainer", "UITableViewAutomaticDimension"]
-- ["PSo18UIContentContainer", "chatMessage"]
 - ["PSo18UIContentContainer", "didPullToRefresh"]
+- !private ["PSo18UIContentContainer", "dismiss"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedView"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "logoutAction"]
 - ["PSo18UIContentContainer", "messageField"]
 - ["PSo18UIContentContainer", "myMessages"]
 - ["PSo18UIContentContainer", "numberOfSections"]
@@ -1105,24 +1129,25 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "text"]
 - !private ["PSo13UIDynamicItem", "userLabel"]
 - !private ["PSo18UIFocusEnvironment", "ChatViewController"]
-- ["PSo18UIFocusEnvironment", "PFObject"]
+- !private ["PSo18UIFocusEnvironment", "PFObject"]
 - !private ["PSo18UIFocusEnvironment", "PFQuery"]
 - !private ["PSo18UIFocusEnvironment", "PFUser"]
 - !private ["PSo18UIFocusEnvironment", "Timer"]
 - !private ["PSo18UIFocusEnvironment", "UIRefreshControl"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewAutomaticDimension"]
 - !private ["PSo18UIFocusEnvironment", "addTarget"]
-- ["PSo18UIFocusEnvironment", "chatMessage"]
 - !private ["PSo18UIFocusEnvironment", "dataSource"]
 - !private ["PSo18UIFocusEnvironment", "delegate"]
 - !private ["PSo18UIFocusEnvironment", "dequeueReusableCell"]
 - ["PSo18UIFocusEnvironment", "didPullToRefresh"]
+- !private ["PSo18UIFocusEnvironment", "dismiss"]
 - !private ["PSo18UIFocusEnvironment", "endRefreshing"]
 - !private ["PSo18UIFocusEnvironment", "estimatedRowHeight"]
 - ["PSo18UIFocusEnvironment", "indexPathForPreferredFocusedView"]
 - ["PSo18UIFocusEnvironment", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UIFocusEnvironment", "init"]
 - !private ["PSo18UIFocusEnvironment", "insertSubview"]
+- ["PSo18UIFocusEnvironment", "logoutAction"]
 - ["PSo18UIFocusEnvironment", "messageField"]
 - !private ["PSo18UIFocusEnvironment", "messageLabel"]
 - ["PSo18UIFocusEnvironment", "myMessages"]
@@ -1193,17 +1218,18 @@ depends-member:
 - ["CSo11UIResponder", "UITextField"]
 - !private ["CSo11UIResponder", "Void"]
 - !private ["CSo11UIResponder", "addTarget"]
-- ["CSo11UIResponder", "chatMessage"]
 - !private ["CSo11UIResponder", "dataSource"]
 - !private ["CSo11UIResponder", "delegate"]
 - !private ["CSo11UIResponder", "dequeueReusableCell"]
 - ["CSo11UIResponder", "didPullToRefresh"]
+- !private ["CSo11UIResponder", "dismiss"]
 - !private ["CSo11UIResponder", "endRefreshing"]
 - !private ["CSo11UIResponder", "estimatedRowHeight"]
 - ["CSo11UIResponder", "indexPathForPreferredFocusedView"]
 - ["CSo11UIResponder", "indexPathForPreferredFocusedViewInTableView"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "insertSubview"]
+- ["CSo11UIResponder", "logoutAction"]
 - ["CSo11UIResponder", "messageField"]
 - !private ["CSo11UIResponder", "messageLabel"]
 - ["CSo11UIResponder", "myMessages"]
@@ -1236,24 +1262,25 @@ depends-member:
 - ["CSo11UIResponder", "viewForZooming"]
 - ["CSo11UIResponder", "viewForZoomingInScrollView"]
 - !private ["PSo30UIResponderStandardEditActions", "ChatViewController"]
-- ["PSo30UIResponderStandardEditActions", "PFObject"]
+- !private ["PSo30UIResponderStandardEditActions", "PFObject"]
 - !private ["PSo30UIResponderStandardEditActions", "PFQuery"]
 - !private ["PSo30UIResponderStandardEditActions", "PFUser"]
 - !private ["PSo30UIResponderStandardEditActions", "Timer"]
 - !private ["PSo30UIResponderStandardEditActions", "UIRefreshControl"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewAutomaticDimension"]
 - !private ["PSo30UIResponderStandardEditActions", "addTarget"]
-- ["PSo30UIResponderStandardEditActions", "chatMessage"]
 - !private ["PSo30UIResponderStandardEditActions", "dataSource"]
 - !private ["PSo30UIResponderStandardEditActions", "delegate"]
 - !private ["PSo30UIResponderStandardEditActions", "dequeueReusableCell"]
 - ["PSo30UIResponderStandardEditActions", "didPullToRefresh"]
+- !private ["PSo30UIResponderStandardEditActions", "dismiss"]
 - !private ["PSo30UIResponderStandardEditActions", "endRefreshing"]
 - !private ["PSo30UIResponderStandardEditActions", "estimatedRowHeight"]
 - ["PSo30UIResponderStandardEditActions", "indexPathForPreferredFocusedView"]
 - ["PSo30UIResponderStandardEditActions", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - !private ["PSo30UIResponderStandardEditActions", "insertSubview"]
+- ["PSo30UIResponderStandardEditActions", "logoutAction"]
 - ["PSo30UIResponderStandardEditActions", "messageField"]
 - !private ["PSo30UIResponderStandardEditActions", "messageLabel"]
 - ["PSo30UIResponderStandardEditActions", "myMessages"]
@@ -1294,13 +1321,14 @@ depends-member:
 - !private ["CSo12UIScrollView", "reloadData"]
 - !private ["CSo12UIScrollView", "rowHeight"]
 - !private ["PSo20UIScrollViewDelegate", "ChatViewController"]
-- ["PSo20UIScrollViewDelegate", "PFObject"]
+- !private ["PSo20UIScrollViewDelegate", "PFObject"]
 - !private ["PSo20UIScrollViewDelegate", "PFQuery"]
 - !private ["PSo20UIScrollViewDelegate", "PFUser"]
 - !private ["PSo20UIScrollViewDelegate", "Timer"]
 - !private ["PSo20UIScrollViewDelegate", "UIRefreshControl"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo20UIScrollViewDelegate", "didPullToRefresh"]
+- !private ["PSo20UIScrollViewDelegate", "dismiss"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedView"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo20UIScrollViewDelegate", "messageField"]
@@ -1329,17 +1357,18 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo20UIScrollViewDelegate", ""]
 - !private ["PSo16UIStateRestoring", "ChatViewController"]
-- ["PSo16UIStateRestoring", "PFObject"]
+- !private ["PSo16UIStateRestoring", "PFObject"]
 - !private ["PSo16UIStateRestoring", "PFQuery"]
 - !private ["PSo16UIStateRestoring", "PFUser"]
 - !private ["PSo16UIStateRestoring", "Timer"]
 - !private ["PSo16UIStateRestoring", "UIRefreshControl"]
 - !private ["PSo16UIStateRestoring", "UITableViewAutomaticDimension"]
-- ["PSo16UIStateRestoring", "chatMessage"]
 - ["PSo16UIStateRestoring", "didPullToRefresh"]
+- !private ["PSo16UIStateRestoring", "dismiss"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedView"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "logoutAction"]
 - ["PSo16UIStateRestoring", "messageField"]
 - ["PSo16UIStateRestoring", "myMessages"]
 - ["PSo16UIStateRestoring", "numberOfSections"]
@@ -1379,13 +1408,14 @@ depends-member:
 - !private ["CSo15UITableViewCell", "messageLabel"]
 - !private ["CSo15UITableViewCell", "userLabel"]
 - !private ["PSo21UITableViewDataSource", "ChatViewController"]
-- ["PSo21UITableViewDataSource", "PFObject"]
+- !private ["PSo21UITableViewDataSource", "PFObject"]
 - !private ["PSo21UITableViewDataSource", "PFQuery"]
 - !private ["PSo21UITableViewDataSource", "PFUser"]
 - !private ["PSo21UITableViewDataSource", "Timer"]
 - !private ["PSo21UITableViewDataSource", "UIRefreshControl"]
 - !private ["PSo21UITableViewDataSource", "UITableViewAutomaticDimension"]
 - !private ["PSo21UITableViewDataSource", "didPullToRefresh"]
+- !private ["PSo21UITableViewDataSource", "dismiss"]
 - ["PSo21UITableViewDataSource", "indexPathForPreferredFocusedView"]
 - ["PSo21UITableViewDataSource", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo21UITableViewDataSource", "messageField"]
@@ -1414,13 +1444,14 @@ depends-member:
 - ["PSo21UITableViewDataSource", "viewForZoomingInScrollView"]
 - ["PSo21UITableViewDataSource", ""]
 - !private ["PSo19UITableViewDelegate", "ChatViewController"]
-- ["PSo19UITableViewDelegate", "PFObject"]
+- !private ["PSo19UITableViewDelegate", "PFObject"]
 - !private ["PSo19UITableViewDelegate", "PFQuery"]
 - !private ["PSo19UITableViewDelegate", "PFUser"]
 - !private ["PSo19UITableViewDelegate", "Timer"]
 - !private ["PSo19UITableViewDelegate", "UIRefreshControl"]
 - !private ["PSo19UITableViewDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo19UITableViewDelegate", "didPullToRefresh"]
+- !private ["PSo19UITableViewDelegate", "dismiss"]
 - ["PSo19UITableViewDelegate", "indexPathForPreferredFocusedView"]
 - ["PSo19UITableViewDelegate", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo19UITableViewDelegate", "messageField"]
@@ -1452,24 +1483,25 @@ depends-member:
 - !private ["PSo11UITextInput", "text"]
 - !private ["PSo17UITextInputTraits", "text"]
 - !private ["PSo18UITraitEnvironment", "ChatViewController"]
-- ["PSo18UITraitEnvironment", "PFObject"]
+- !private ["PSo18UITraitEnvironment", "PFObject"]
 - !private ["PSo18UITraitEnvironment", "PFQuery"]
 - !private ["PSo18UITraitEnvironment", "PFUser"]
 - !private ["PSo18UITraitEnvironment", "Timer"]
 - !private ["PSo18UITraitEnvironment", "UIRefreshControl"]
 - !private ["PSo18UITraitEnvironment", "UITableViewAutomaticDimension"]
 - !private ["PSo18UITraitEnvironment", "addTarget"]
-- ["PSo18UITraitEnvironment", "chatMessage"]
 - !private ["PSo18UITraitEnvironment", "dataSource"]
 - !private ["PSo18UITraitEnvironment", "delegate"]
 - !private ["PSo18UITraitEnvironment", "dequeueReusableCell"]
 - ["PSo18UITraitEnvironment", "didPullToRefresh"]
+- !private ["PSo18UITraitEnvironment", "dismiss"]
 - !private ["PSo18UITraitEnvironment", "endRefreshing"]
 - !private ["PSo18UITraitEnvironment", "estimatedRowHeight"]
 - ["PSo18UITraitEnvironment", "indexPathForPreferredFocusedView"]
 - ["PSo18UITraitEnvironment", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "insertSubview"]
+- ["PSo18UITraitEnvironment", "logoutAction"]
 - ["PSo18UITraitEnvironment", "messageField"]
 - !private ["PSo18UITraitEnvironment", "messageLabel"]
 - ["PSo18UITraitEnvironment", "myMessages"]
@@ -1531,12 +1563,13 @@ depends-member:
 - ["CSo16UIViewController", "UITableViewCell"]
 - ["CSo16UIViewController", "UITextField"]
 - !private ["CSo16UIViewController", "Void"]
-- ["CSo16UIViewController", "chatMessage"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "didPullToRefresh"]
+- !private ["CSo16UIViewController", "dismiss"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedView"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedViewInTableView"]
 - ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "logoutAction"]
 - ["CSo16UIViewController", "messageField"]
 - ["CSo16UIViewController", "myMessages"]
 - ["CSo16UIViewController", "numberOfSections"]
@@ -1596,17 +1629,17 @@ depends-member:
 - !private ["Ps24_DestructorSafeContainer", "count"]
 - !private ["Ps24_DestructorSafeContainer", "subscript"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
-- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
-- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "ChatViewController"]
 - !private ["Ps9_Hashable", "IntegerLiteralType"]
-- ["Ps9_Hashable", "PFObject"]
+- !private ["Ps9_Hashable", "PFObject"]
 - !private ["Ps9_Hashable", "PFQuery"]
 - !private ["Ps9_Hashable", "PFUser"]
 - !private ["Ps9_Hashable", "Stride"]
@@ -1616,19 +1649,21 @@ depends-member:
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "addTarget"]
-- ["Ps9_Hashable", "chatMessage"]
 - !private ["Ps9_Hashable", "current"]
 - !private ["Ps9_Hashable", "dataSource"]
 - !private ["Ps9_Hashable", "delegate"]
 - !private ["Ps9_Hashable", "dequeueReusableCell"]
 - ["Ps9_Hashable", "didPullToRefresh"]
+- !private ["Ps9_Hashable", "dismiss"]
 - !private ["Ps9_Hashable", "endRefreshing"]
 - !private ["Ps9_Hashable", "estimatedRowHeight"]
 - !private ["Ps9_Hashable", "findObjectsInBackground"]
 - ["Ps9_Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps9_Hashable", "indexPathForPreferredFocusedViewInTableView"]
-- ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "insertSubview"]
+- !private ["Ps9_Hashable", "logOut"]
+- ["Ps9_Hashable", "logoutAction"]
 - ["Ps9_Hashable", "messageField"]
 - !private ["Ps9_Hashable", "messageLabel"]
 - ["Ps9_Hashable", "myMessages"]
@@ -1685,7 +1720,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
-- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "row"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
@@ -1710,10 +1745,10 @@ depends-nominal:
 - "C9ParseChat8ChatCell"
 - "C9ParseChat18ChatViewController"
 - !private "Ps10Collection"
-- "Ps10Comparable"
+- !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
-- "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - !private "Vs27DefaultBidirectionalIndices"
 - !private "Vs26DefaultRandomAccessIndices"
@@ -1722,11 +1757,11 @@ depends-nominal:
 - !private "Ps5Error"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
-- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
-- "Ps32ExpressibleByStringInterpolation"
-- "Ps26ExpressibleByStringLiteral"
-- "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - !private "Sf"
 - "Ps8Hashable"
 - "SQ"
@@ -1742,19 +1777,19 @@ depends-nominal:
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - !private "Ps16IteratorProtocol"
-- "Ps25LosslessStringConvertible"
-- "Ps10MirrorPath"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
 - !private "Ps16MutableIndexable"
 - "CSo7NSCoder"
 - "PSo8NSCoding"
-- "PSo9NSCopying"
+- !private "PSo9NSCopying"
 - "PSo26NSExtensionRequestHandling"
-- "PSo16NSMutableCopying"
+- !private "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
-- "PSo14NSSecureCoding"
-- "CSo8NSString"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
 - !private "Ps9OptionSet"
 - "Sq"
 - "CSo8PFObject"
@@ -1776,8 +1811,8 @@ depends-nominal:
 - !private "Vs5Slice"
 - !private "Ps10Strideable"
 - "SS"
-- "Ps16TextOutputStream"
-- "Ps20TextOutputStreamable"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
 - "CSo5Timer"
 - !private "PSo29UIAccessibilityIdentification"
 - !private "PSo12UIAppearance"
@@ -1819,17 +1854,17 @@ depends-nominal:
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps24_DestructorSafeContainer"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
-- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
-- "Ps34_ExpressibleByBuiltinStringLiteral"
-- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- "Ps35_HasCustomAnyHashableRepresentation"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "Ps14_Incrementable"
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
-- "Ps21_ObjectiveCBridgeable"
+- !private "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
@@ -1902,4 +1937,4 @@ depends-external:
 - "/Users/SiD/Desktop/CS 490/ParseChat/build/Debug-iphonesimulator/Parse/Parse.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
-interface-hash: "cb2854935d767396aed4bbdeb20b11f5"
+interface-hash: "f9ed238ee99f8fba3f260e5b6aa4d384"

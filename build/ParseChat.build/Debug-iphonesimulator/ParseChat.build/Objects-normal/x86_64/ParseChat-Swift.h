@@ -164,8 +164,8 @@ SWIFT_CLASS("_TtC9ParseChat18ChatViewController")
 @property (nonatomic, strong) UIRefreshControl * _Null_unspecified refreshControl;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic, copy) NSArray<PFObject *> * _Nonnull myMessages;
-@property (nonatomic, readonly, strong) PFObject * _Nonnull chatMessage;
 - (void)viewDidLoad;
+- (IBAction)logoutAction:(id _Nonnull)sender;
 - (void)onTimer;
 - (void)didPullToRefresh:(UIRefreshControl * _Nonnull)refreshControl;
 - (IBAction)sendAction:(id _Nonnull)sender;
